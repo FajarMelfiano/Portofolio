@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Melfiano | Portofolio Teknologi & Servis HP</title>
+  <meta name="description" content="Portofolio Fajar Melfiano Obese Afoan Toan (Melfiano) — Siswa SMK Krian 1, Linux Enthusiast, Cyber Security, Python, dan Teknisi HP." />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="Portofolio Cyber Security Melfiano, berisi project, artikel, dan pengalaman.">
+  <meta name="keywords" content="Melfiano, Portfolio, Technology">
+  <meta name="robots" content="index, follow">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="icon.png" type="image/png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --bg-soft:#0f172a;
+      --fg: #e5e7eb;
+      --muted:#94a3b8;
+      --brand:#22d3ee;
+      --accent:#a78bfa;
+      --success:#10b981;
+      --warning:#f59e0b;
+      --danger:#ef4444;
+      --card:#0f172a;
+      --border: rgba(255,255,255,.08);
+      --glow: rgba(34,211,238,.15);
+    }
+    [data-theme="light"]{
+      --bg: #ffffff;
+      --bg-soft:#f8fafc;
+      --fg:#0f172a;
+      --muted:#475569;
+      --card:#ffffff;
+      --border: rgba(15,23,42,.08);
+      --glow: rgba(34,211,238,.08);
+    }
+    html{scroll-behavior:smooth}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      overflow-x: hidden;
+    }
+    .navbar{
+      backdrop-filter:saturate(180%) blur(20px); 
+      background: rgba(15,23,42,.85); 
+      border-bottom:1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    .navbar.scrolled{
+      background: rgba(15,23,42,.95);
+      box-shadow: 0 4px 20px rgba(0,0,0,.1);
+    }
+    [data-theme="light"] .navbar{background: rgba(255,255,255,.85)}
+    [data-theme="light"] .navbar.scrolled{background: rgba(255,255,255,.95)}
+    .nav-link{
+      color:var(--fg)!important; 
+      opacity:.85; 
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .nav-link.active, .nav-link:hover{
+      opacity:1;
+      transform: translateY(-2px);
+    }
+    .nav-link.active::after{
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 4px;
+      background: var(--brand);
+      border-radius: 50%;
+    }
+    .Name-Badge{color:var(--fg)!important; opacity:.95; font-weight: 700;}
+    .icon-badge{
+      color:var(--fg)!important; 
+      opacity:.85;
+      transition: all 0.3s ease;
+    }
+    #themeToggle{
+      color:var(--fg)!important; 
+      opacity:.85;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #themeToggle:hover{
+      opacity: 1;
+      transform: rotate(180deg);
+    }
+    .btn-brand{
+      background:linear-gradient(135deg,var(--brand),var(--accent)); 
+      color:#0b1220; 
+      border:0;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-brand:hover{
+      filter:brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(34,211,238,0.25);
+    }
+    .btn-ghost{
+      border:1px solid var(--border); 
+      color:var(--fg);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-ghost:hover{
+      color: #0b1220;
+      border-color: var(--brand);
+      transform: translateY(-2px);
+    }
+    .hero{
+      position:relative; 
+      min-height:100vh; 
+      display:grid; 
+      place-items:center; 
+      overflow:hidden;
+    }
+    .hero::before{
+      content:""; 
+      position:absolute; 
+      inset:-20%; 
+      background:radial-gradient(60% 60% at 50% 0%, rgba(34,211,238,.3), rgba(167,139,250,.2) 35%, transparent 70%);
+      animation: pulse 4s ease-in-out infinite;
+    } 
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    .floating-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .particle {
+      position: absolute;
+      background: var(--brand);
+      border-radius: 50%;
+      opacity: 0.1;
+      animation: float 6s ease-in-out infinite;
+    }
+    .particle:nth-child(odd) {
+      background: var(--accent);
+      animation-duration: 8s;
+      animation-delay: -2s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+    .glow{position:absolute; inset:0; pointer-events:none}
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03)); 
+      border:1px solid var(--border); 
+      border-radius:24px;
+      backdrop-filter: blur(12px);
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    .hero-card:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 20px 60px rgba(34,211,238,0.1);
+    }
+    .tag{
+      border:1px solid var(--border); 
+      padding:.4rem .8rem; 
+      border-radius:999px; 
+      font-size:.85rem; 
+      color:var(--muted);
+      background: rgba(255,255,255,.03);
+      backdrop-filter: blur(8px);
+      transition: all 0.3s ease;
+    }
+    .tag:hover{
+      background: rgba(34,211,238,.1);
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+    section{padding:6rem 0}
+    .section-title{margin-bottom:3rem}
+    .cardx{
+      background:var(--card); 
+      border:1px solid var(--border); 
+      border-radius:20px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .cardx:hover{
+      transform:translateY(-8px); 
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      border-color: var(--brand);
+    }
+    .icon-badge{
+      width:48px; 
+      height:48px; 
+      display:grid; 
+      place-items:center; 
+      border-radius:14px; 
+      background:rgba(34,211,238,.1); 
+      border:1px solid var(--border);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .icon-badge::before{
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    .cardx:hover .icon-badge::before{
+      opacity: 1;
+    }
+    .cardx:hover .icon-badge{
+      color: #0b1220 !important;
+      transform: scale(1.1);
+    }
+    .text-gradient{
+      background: linear-gradient(90deg,var(--brand),var(--accent)); 
+      -webkit-background-clip:text; 
+      background-clip:text; 
+      color:transparent;
+      background-size: 200% 200%;
+      animation: gradient-shift 3s ease infinite;
+    }
+    @keyframes gradient-shift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .portfolio-item{
+      border-radius:20px; 
+      overflow:hidden; 
+      border:1px solid var(--border);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .portfolio-item img{
+      width:100%; 
+      height:280px; 
+      object-fit:cover;
+      transition: transform 0.5s ease;
+    }
+    .portfolio-item:hover img{
+      transform: scale(1.1);
+    }
+    .portfolio-item .overlay{
+      position:absolute; 
+      inset:0; 
+      background:linear-gradient(180deg, transparent 40%, rgba(0,0,0,.8)); 
+      opacity:0; 
+      transition:all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: blur(2px);
+    }
+    .portfolio-item:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    .portfolio-item:hover .overlay{
+      opacity:1
+    }
+
+    .counter-card{
+      position: relative;
+    }
+    .counter-card::before{
+      content: '';
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      border-radius: inherit;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    .counter-card:hover::before{
+      opacity: 0.1;
+    }
+
+    .status-indicator{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .status-online{
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--success);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+    }
+    .status-indicator .pulse{
+      width: 8px;
+      height: 8px;
+      background: currentColor;
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    footer{
+      border-top:1px solid var(--border);
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(12px);
+    }
+
+    .theme-toggle{
+      border:1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .theme-toggle::before{
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .theme-toggle:hover::before{
+      opacity: 0.1;
+    }
+
+    .loading-dots::after {
+      content: '';
+      animation: loading-dots 1.5s infinite;
+    }
+
+    @keyframes loading-dots {
+      0%, 20% { content: ''; }
+      40% { content: '.'; }
+      60% { content: '..'; }
+      80%, 100% { content: '...'; }
+    }
+
+    @media (max-width: 992px) {
+      .hero { min-height: 70vh; }
+      section { padding: 3rem 0; }
+      .portfolio-item img { height: 160px; }
+      .navbar .navbar-collapse {
+        background: var(--bg-soft);
+        border-radius: 0 0 16px 16px;
+        margin-top: 8px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      }
+      .navbar-nav .nav-link {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        font-size: 1.1rem;
+      }
+      .hero-card {
+        padding: 1.5rem !important;
+      }
+    }
+    @media (max-width: 768px) {
+      .hero { min-height: 60vh; }
+      section { padding: 2rem 0; }
+      .portfolio-item img { height: 120px; }
+      .hero-card {
+        padding: 1rem !important;
+      }
+      .section-title h2 {
+        font-size: 1.5rem;
+      }
+      .btn-lg, .btn-brand, .btn-ghost {
+        font-size: 1rem !important;
+        padding: .6rem 1.2rem !important;
+      }
+      .cardx {
+        padding: 1rem !important;
+      }
+      .navbar .navbar-collapse {
+        border-radius: 0 0 12px 12px;
+      }
+    }
+    @media (max-width: 576px) {
+      .hero { min-height: 50vh; }
+      .portfolio-item img { height: 80px; }
+      .navbar .navbar-collapse {
+        border-radius: 0 0 8px 8px;
+      }
+      .section-title h2 {
+        font-size: 1.1rem;
+      }
+      .btn-lg, .btn-brand, .btn-ghost {
+        font-size: .95rem !important;
+        padding: .5rem 1rem !important;
+      }
+    }
+
+    img, .portfolio-item img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .fab-whatsapp {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      z-index: 9999;
+      background: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transition: background 0.2s;
+      animation: fab-fadein 0.7s;
+    }
+    .fab-whatsapp:hover { background: #128c7e; }
+    @media (min-width: 992px) {
+      .fab-whatsapp { display: none !important; }
+    }
+    @keyframes fab-fadein {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    #scrollProgressBar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand), var(--accent));
+      z-index: 2000;
+      width: 0;
+      transition: width 0.2s;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      #experience .row.g-4 {
+        position: relative;
+        padding-left: 18px;
+      }
+      #experience .row.g-4::before {
+        content: '';
+        position: absolute;
+        left: 8px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(var(--brand), var(--accent));
+        opacity: 0.3;
+      }
+      #experience .cardx {
+        margin-left: 16px;
+        position: relative;
+      }
+      #experience .cardx::before {
+        content: '';
+        position: absolute;
+        left: -18px;
+        top: 24px;
+        width: 12px;
+        height: 12px;
+        background: var(--brand);
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 2px var(--brand);
+        z-index: 2;
+      }
+    }
+
+    #tools {
+      padding: 4rem 0;
+    }
+    .tech-icon {
+      width: 48px; height: 48px; filter: grayscale(0.5); opacity: 0.8;
+      transition: filter 0.2s, transform 0.2s, opacity 0.2s;
+    }
+    .tech-icon:hover {
+      filter: grayscale(0) drop-shadow(0 0 8px var(--brand));
+      opacity: 1;
+      transform: scale(1.15) rotate(-6deg);
+    }
+
+    #blog {
+      padding: 4rem 0;
+    }
+
+    #accessibilityBtn {
+      z-index: 9999;
+    }
+    .accessibility-high-contrast {
+      filter: contrast(1.3) brightness(1.1);
+      background: #000 !important;
+      color: #fff !important;
+    }
+    .accessibility-large-font {
+      font-size: 1.15em !important;
+    }
+
+    .svg-divider {
+      width:100%;overflow:hidden;line-height:0;
+    }
+    .svg-divider svg {
+      display:block;width:100%;height:30px;
+    }
+    .svg-divider path {
+      fill:var(--bg-soft);
+    }
+
+    .hero-card {
+      max-width: 700px;
+      width: 100%;
+      min-height: 180px;
+      padding: 1.5rem 1.2rem;
+      border-radius: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(120deg, rgba(34,211,238,0.10) 60%, rgba(167,139,250,0.10) 100%);
+      box-shadow: 0 4px 24px 0 rgba(34,211,238,0.10);
+      margin: 0 auto;
+      word-break: break-word;
+    }
+    @media (max-width: 768px) {
+      .hero-card {
+        padding: 1rem 0.5rem;
+        min-height: 100px;
+        border-radius: 12px;
+        max-width: 98vw;
+      }
+      .hero h1, .hero .display-5 {
+        font-size: 1.15rem !important;
+        text-align: center;
+        word-break: break-word;
+      }
+      .hero-card .lead {
+        font-size: .97rem !important;
+        text-align: center;
+      }
+      .hero-card .btn-lg {
+        font-size: .98rem !important;
+        padding: .5rem 1rem !important;
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+      .hero-card .icon-badge {
+        width: 28px;
+        height: 28px;
+        font-size: .95rem;
+      }
+      .hero-card .tag, .hero-card .badge {
+        font-size: .78rem !important;
+        padding: .18rem .5rem !important;
+      }
+      .hero-card .mb-3, .hero-card .mb-4 {
+        margin-bottom: 0.5rem !important;
+      }
+      .hero-card .d-flex.flex-wrap.gap-3.justify-content-center.mt-3 {
+        gap: 0.3rem !important;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero-card {
+        padding: 0.6rem 0.2rem;
+        min-height: 60px;
+        border-radius: 8px;
+        max-width: 100vw;
+      }
+      .hero h1, .hero .display-5 {
+        font-size: .98rem !important;
+      }
+      .hero-card .lead {
+        font-size: .89rem !important;
+      }
+      .hero-card .btn-lg {
+        font-size: .92rem !important;
+        padding: .4rem .7rem !important;
+        width: 100%;
+        margin-bottom: 0.4rem;
+      }
+      .hero-card .icon-badge {
+        width: 20px;
+        height: 20px;
+        font-size: .8rem;
+      }
+      .hero-card .tag, .hero-card .badge {
+        font-size: .7rem !important;
+        padding: .12rem .35rem !important;
+      }
+      .hero-card .mb-3, .hero-card .mb-4 {
+        margin-bottom: 0.3rem !important;
+      }
+      .hero-card .d-flex.flex-wrap.gap-3.justify-content-center.mt-3 {
+        gap: 0.15rem !important;
+      }
+    }
+
+    footer .container {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+    footer .d-flex {
+      flex-direction: column !important;
+      gap: 0.5rem !important;
+      align-items: center !important;
+    }
+    @media (min-width: 576px) {
+      footer .d-flex {
+        flex-direction: row !important;
+        gap: 1.5rem !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+    }
+    footer p, footer a {
+      font-size: 0.98rem;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader" style="position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;background:var(--bg);">
+    <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_usmfx6bp.json" background="transparent" speed="1" style="width:80px;height:80px;" loop autoplay></lottie-player>
+  </div>
+  <div class="floating-particles">
+    <div class="particle" style="width: 4px; height: 4px; top: 20%; left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="width: 6px; height: 6px; top: 60%; left: 80%; animation-delay: 2s;"></div>
+    <div class="particle" style="width: 3px; height: 3px; top: 40%; left: 20%; animation-delay: 4s;"></div>
+    <div class="particle" style="width: 5px; height: 5px; top: 80%; left: 60%; animation-delay: 1s;"></div>
+    <div class="particle" style="width: 4px; height: 4px; top: 30%; left: 90%; animation-delay: 3s;"></div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg sticky-top glass" id="topNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#hero" aria-label="Melfiano Home">
+        <span class="icon-badge" style="width:36px;height:36px"><i class="fa-solid fa-shield-halved"></i></span>
+        <strong class="Name-Badge">Fajar Melfiano</strong>
+      </a>
+      <div class="d-flex align-items-center gap-2">
+        <div class="status-indicator status-online">
+          <span class="pulse"></span>
+          Online
+        </div>
+        <button class="btn btn-sm theme-toggle rounded-4" id="themeToggle" aria-label="Ubah tema">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navItems" aria-controls="navItems" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navItems">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Pengalaman</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Keahlian</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Proyek</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="hero" class="hero container position-relative" style="min-height:100vh;display:flex;align-items:center;justify-content:center;">
+    <div style="position:absolute;inset:0;z-index:0;pointer-events:none;">
+      <canvas id="heroBgCanvas" style="width:100%;height:100%;display:block;"></canvas>
+    </div>
+    <div class="row w-100 align-items-center justify-content-center position-relative" style="z-index:2;">
+      <div class="col-12 d-flex justify-content-center">
+        <div
+          class="hero-card glass animate__animated animate__fadeInDown"
+          data-aos="fade-up"
+          data-aos-delay="50"
+        >
+          <div class="mb-3 text-center">
+            <lottie-player id="heroLottie" src="https://assets2.lottiefiles.com/packages/lf20_4kx2q32n.json" background="transparent" speed="1" style="width: 90px; height: 90px; margin:0 auto;cursor:pointer;filter:drop-shadow(0 0 18px var(--brand));" loop autoplay></lottie-player>
+          </div>
+          <h1 class="display-5 fw-bold mb-2 animate__animated animate__fadeInUp" style="font-size:2rem;">
+            Halo, saya <span class="text-gradient">Melfiano</span>
+          </h1>
+          <div class="mb-3">
+            <span class="badge bg-info text-dark px-3 py-2 me-2" style="font-size:1rem;box-shadow:0 2px 12px var(--brand);">Siswa SMK Krian 1</span>
+            <span class="badge bg-dark px-3 py-2" style="font-size:1rem;box-shadow:0 2px 12px var(--accent);">Teknisi Servis HP</span>
+          </div>
+          <div class="mb-4">
+            <span id="typed-hero" style="font-size:1.1rem;color:var(--brand);font-weight:600;letter-spacing:1px;"></span>
+            <span class="blinking-cursor" style="color:var(--accent);font-size:1.2rem;">|</span>
+          </div>
+          <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s" style="color:var(--muted);font-size:1.05rem;">
+            Saya suka <b>Linux</b>, <b>Python</b>, dan membangun proyek digital yang <span class="text-gradient">unik & interaktif</span>.<br>
+            Tahun 2023-2024 saya kerja sebagai <b>teknisi servis HP</b>.<br>
+            <span style="color:var(--brand);font-weight:600;">Scroll ke bawah untuk kenal lebih dekat!</span>
+          </p>
+          <div class="d-flex flex-wrap gap-2 mb-3 justify-content-center">
+            <a href="#projects" class="btn btn-brand btn-lg rounded-4 animate__animated animate__pulse animate__infinite" style="box-shadow:0 4px 24px var(--brand);">
+              <i class="fa-solid fa-code me-2"></i>Proyek Saya
+            </a>
+            <a href="#contact" class="btn btn-ghost btn-lg rounded-4 animate__animated animate__fadeInUp animate__delay-2s" style="box-shadow:0 2px 12px var(--accent);">
+              <i class="fa-solid fa-envelope me-2"></i>Kontak Saya
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const texts = [
+        "Anak SMK yang suka ngoprek teknologi.",
+        "Pernah kerja jadi teknisi servis HP.",
+        "Linux & Python Enthusiast.",
+        "Bikin main cloud, dan crypto.",
+        "Suka tampilan interaktif & otomatisasi."
+      ];
+      let i = 0, j = 0, isDel = false, el = document.getElementById('typed-hero');
+      function type() {
+        if (!el) return;
+        if (!isDel && j <= texts[i].length) {
+          el.textContent = texts[i].substring(0, j++);
+          setTimeout(type, 38 + Math.random()*40);
+        } else if (isDel && j >= 0) {
+          el.textContent = texts[i].substring(0, j--);
+          setTimeout(type, 18 + Math.random()*30);
+        } else {
+          isDel = !isDel;
+          if (!isDel) i = (i + 1) % texts.length;
+          setTimeout(type, isDel ? 900 : 1200);
+        }
+      }
+      type();
+    });
+    setInterval(() => {
+      const cur = document.querySelector('.blinking-cursor');
+      if (cur) cur.style.opacity = cur.style.opacity === "0" ? "1" : "0";
+    }, 500);
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const lottie = document.getElementById('heroLottie');
+      if (lottie) {
+        lottie.addEventListener('click', function() {
+          lottie.setSpeed(2.5);
+          lottie.play();
+          lottie.style.transform = 'scale(1.13) rotate(-8deg)';
+          setTimeout(() => {
+            lottie.setSpeed(1);
+            lottie.style.transform = '';
+          }, 700);
+        });
+        lottie.setAttribute('title', 'Klik aku!');
+        lottie.style.cursor = 'pointer';
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const canvas = document.getElementById('heroBgCanvas');
+      if (!canvas) return;
+      function resize() {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize);
+      const ctx = canvas.getContext('2d');
+      let t = 0;
+      function draw() {
+        const w = canvas.width, h = canvas.height;
+        ctx.clearRect(0,0,w,h);
+        for(let i=0;i<6;i++){
+          const x = w/2 + Math.sin(t/40 + i)*w*0.28;
+          const y = h/2 + Math.cos(t/30 + i*1.2)*h*0.22;
+          const r = 90 + 40*Math.sin(t/50 + i*2);
+          const grad = ctx.createRadialGradient(x,y,0,x,y,r);
+          grad.addColorStop(0, i%2==0 ? "#22d3ee88" : "#a78bfa88");
+          grad.addColorStop(1, "transparent");
+          ctx.beginPath();
+          ctx.arc(x,y,r,0,2*Math.PI);
+          ctx.fillStyle = grad;
+          ctx.fill();
+        }
+        t++;
+        requestAnimationFrame(draw);
+      }
+      draw();
+    });
+  </script>
+
+  <section id="about">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-5" data-aos="zoom-in">
+          <div class="cardx p-3 position-relative glass animate__animated animate__fadeInLeft">
+            <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?q=80&w=1400&auto=format&fit=crop"
+              alt="Linux Desk"
+              class="rounded-3 w-100"
+              loading="lazy"
+            />
+            <div class="position-absolute top-0 end-0 m-3">
+              <span class="tag animate__animated animate__bounceIn"><i class="fa-solid fa-award me-1"></i> Siswa SMK Krian 1</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7" data-aos="fade-left">
+          <span class="tag mb-3 d-inline-block animate__animated animate__fadeInDown">
+            <i class="fa-solid fa-user-astronaut me-1"></i> Tentang Melfiano
+          </span>
+          <h2 class="fw-bold mb-3 animate__animated animate__fadeInUp">Kreatif, Modern, <span class="text-gradient">Futuristik</span></h2>
+          <p class="mb-4 animate__animated animate__fadeInUp animate__delay-1s" style="color:var(--muted)">
+            Saya suka <b>eksperimen teknologi</b> sejak kecil. Dari ngoprek Linux, main Hyprland, sampai bikin bot WhatsApp dan server sendiri.<br>
+            Tahun 2023-2024 saya bekerja sebagai <b>teknisi servis HP</b> — pengalaman nyata menangani berbagai masalah hardware & software.<br>
+            Dunia saya penuh warna: <b>otomatisasi, cloud, dan tampilan interaktif</b>.<br>
+            Saya percaya, belajar teknologi itu harus fun, kreatif, dan bermanfaat!
+          </p>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="cardx p-4 h-100 glass animate__animated animate__fadeInUp animate__delay-2s">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="icon-badge"><i class="fa-brands fa-python"></i></div>
+                  <strong>Skill Coding</strong>
+                </div>
+                <ul class="mb-0 small" style="color:var(--muted)">
+                  <li>Python (otomasi, bot, scraping)</li>
+                  <li>Linux Shell (Zsh, Fish)</li>
+                  <li>React (belajar frontend)</li>
+                  <li>Bash scripting & CLI tools</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="cardx p-4 h-100 glass animate__animated animate__fadeInUp animate__delay-3s">
+                <div class="d-flex align-items-center gap-3 mb-3">
+                  <div class="icon-badge"><i class="fa-solid fa-network-wired"></i></div>
+                  <strong>Minat & Proyek</strong>
+                </div>
+                <ul class="mb-0 small" style="color:var(--muted)">
+                  <li>Hyprland, Waybar, Linux theming</li>
+                  <li>Bot WhatsApp, Telegram, Discord</li>
+                  <li>Servis HP & eksperimen hardware</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2 class="fw-bold animate__animated animate__fadeInDown">Pengalaman <span class="text-gradient">Kerja</span></h2>
+        <p style="color:var(--muted)" class="animate__animated animate__fadeInUp">Perjalanan nyata di dunia servis HP & teknologi.</p>
+      </div>
+      <div class="timeline">
+        <div class="timeline-event animate__animated animate__fadeInLeft">
+          <div class="timeline-dot"></div>
+          <div class="cardx p-4 glass">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon-badge"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+              <strong>Teknisi Servis HP</strong>
+            </div>
+            <div class="mb-2" style="color:var(--muted);">
+              <i class="fa-solid fa-calendar me-1"></i> 2023 - 2024
+            </div>
+            <div class="mb-2" style="color:var(--muted);">
+              <i class="fa-solid fa-location-dot me-1"></i> Krian, Sidoarjo
+            </div>
+            <div>
+              <ul class="mb-0 small" style="color:var(--muted)">
+                <li>Servis hardware & software HP Android/iPhone</li>
+                <li>Flashing, unlock, ganti sparepart, troubleshooting</li>
+                <li>Memberikan solusi cepat & edukasi ke pelanggan</li>
+                <li>Belajar langsung dari dunia kerja nyata</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-event animate__animated animate__fadeInRight animate__delay-1s">
+          <div class="timeline-dot"></div>
+          <div class="cardx p-4 glass">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon-badge"><i class="fa-solid fa-laptop-code"></i></div>
+              <strong>Proyek Otomasi & Bot</strong>
+            </div>
+            <div class="mb-2" style="color:var(--muted);">
+              <i class="fa-solid fa-calendar me-1"></i> 2022 - Sekarang
+            </div>
+            <div>
+              <ul class="mb-0 small" style="color:var(--muted)">
+                <li>Membuat bot WhatsApp, Telegram, Discord</li>
+                <li>Otomasi tugas harian & monitoring server</li>
+                <li>Eksperimen cloud & VPS (Cloudflare, RDP, dsb)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2 class="fw-bold animate__animated animate__fadeInDown">Keahlian <span class="text-gradient">Teknologi</span></h2>
+        <p style="color:var(--muted)" class="animate__animated animate__fadeInUp">Linux, Python, Cyber Security, Cloud, Otomasi, Servis HP.</p>
+      </div>
+      <div class="row g-4" data-aos="fade-up">
+        <div class="col-lg-6">
+          <div class="cardx p-4 glass animate__animated animate__fadeInLeft">
+            <h5 class="mb-4"><i class="fa-brands fa-linux me-2 text-gradient"></i>Linux & Open Source</h5>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between small mb-2">
+                <span>Arch Linux, Debian, Ubuntu</span><span class="text-gradient fw-bold">90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="90"></div></div>
+            </div>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between small mb-2">
+                <span>Hyprland, Waybar, Theming</span><span class="text-gradient fw-bold">85%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="85"></div></div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between small mb-2">
+                <span>Shell (Zsh, Fish, Bash)</span><span class="text-gradient fw-bold">88%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="88"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="cardx p-4 glass animate__animated animate__fadeInRight">
+            <h5 class="mb-4"><i class="fa-brands fa-python me-2 text-gradient"></i>Python & Otomasi</h5>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between small mb-2">
+                <span>Bot WhatsApp, Telegram, Discord</span><span class="text-gradient fw-bold">85%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="85"></div></div>
+            </div>
+            <div class="mb-4">
+              <div class="d-flex justify-content-between small mb-2">
+                <span>Web Scraping & API</span><span class="text-gradient fw-bold">80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="80"></div></div>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between small mb-2">
+                <span>React (Frontend)</span><span class="text-gradient fw-bold">70%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" style="width:0%" data-width="70"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row g-3 mt-4" data-aos="zoom-in">
+        <div class="col-6 col-lg-3">
+          <div class="cardx counter-card p-4 text-center glass animate__animated animate__zoomIn">
+            <div class="icon-badge mx-auto mb-2" style="width: 40px; height: 40px;">
+              <i class="fa-solid fa-server"></i>
+            </div>
+            <h2 class="mb-0 text-gradient" data-counter="12">0</h2>
+            <small style="color:var(--muted)">Server Dikelola</small>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="cardx counter-card p-4 text-center glass animate__animated animate__zoomIn">
+            <div class="icon-badge mx-auto mb-2" style="width: 40px; height: 40px;">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+            <h2 class="mb-0 text-gradient" data-counter="8">0</h2>
+            <small style="color:var(--muted)">Bot Otomatisasi</small>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="cardx counter-card p-4 text-center glass animate__animated animate__zoomIn">
+            <div class="icon-badge mx-auto mb-2" style="width: 40px; height: 40px;">
+              <i class="fa-solid fa-mobile-alt"></i>
+            </div>
+            <h2 class="mb-0 text-gradient" data-counter="20">0</h2>
+            <small style="color:var(--muted)">HP Diservis</small>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="cardx counter-card p-4 text-center glass animate__animated animate__zoomIn">
+            <div class="icon-badge mx-auto mb-2" style="width: 40px; height: 40px;">
+              <i class="fa-solid fa-book"></i>
+            </div>
+            <h2 class="mb-0 text-gradient" data-counter="50">0</h2>
+            <small style="color:var(--muted)">Buku Dibaca</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2 class="fw-bold animate__animated animate__fadeInDown">Proyek <span class="text-gradient">Interaktif</span></h2>
+        <p style="color:var(--muted)" class="animate__animated animate__fadeInUp">Beberapa eksperimen dan karya digitalku.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+          <div class="position-relative portfolio-item glass animate__animated animate__zoomIn">
+            <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop"
+              alt="Bot WhatsApp"
+              class="img-fluid"
+              loading="lazy"
+            />
+            <div class="overlay p-4 animate__animated animate__fadeInUp">
+              <div>
+                <h6 class="mb-2 fw-bold">Bot WhatsApp Otomatis</h6>
+                <small class="d-block mb-3">
+                  Bot WhatsApp untuk auto-reply, notifikasi, dan integrasi cloud. Dibangun dengan Python & API.
+                </small>
+                <div class="d-flex gap-2 mb-3">
+                  <span class="badge bg-success">Python</span>
+                  <span class="badge bg-info">Cloud</span>
+                </div>
+                <a class="btn btn-sm btn-brand rounded-3" href="#" tabindex="-1" aria-disabled="true">
+                  <i class="fa-solid fa-eye me-1"></i>Demo Segera
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+          <div class="position-relative portfolio-item glass animate__animated animate__zoomIn">
+            <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=800&auto=format&fit=crop"
+              alt="Hyprland Setup"
+              class="img-fluid"
+              loading="lazy"
+            />
+            <div class="overlay p-4 animate__animated animate__fadeInUp">
+              <div>
+                <h6 class="mb-2 fw-bold">Hyprland & Waybar Custom</h6>
+                <small class="d-block mb-3">
+                  Setup Linux desktop super estetik, interaktif, dan otomatis. Full theming, widget, dan script.
+                </small>
+                <div class="d-flex gap-2 mb-3">
+                  <span class="badge bg-dark">Hyprland</span>
+                  <span class="badge bg-primary">Waybar</span>
+                </div>
+                <a class="btn btn-sm btn-brand rounded-3" href="#" tabindex="-1" aria-disabled="true">
+                  <i class="fa-solid fa-eye me-1"></i>Demo Segera
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="190">
+          <div class="position-relative portfolio-item glass animate__animated animate__zoomIn">
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop"
+              alt="Crypto Trading"
+              class="img-fluid"
+              loading="lazy"
+            />
+            <div class="overlay p-4 animate__animated animate__fadeInUp">
+              <div>
+                <h6 class="mb-2 fw-bold">Crypto Trading Bot</h6>
+                <small class="d-block mb-3">
+                  Bot trading crypto otomatis, analisa harga, dan notifikasi ke Telegram/WhatsApp.
+                </small>
+                <div class="d-flex gap-2 mb-3">
+                  <span class="badge bg-warning">Crypto</span>
+                  <span class="badge bg-success">Python</span>
+                </div>
+                <a class="btn btn-sm btn-brand rounded-3" href="#" tabindex="-1" aria-disabled="true">
+                  <i class="fa-solid fa-eye me-1"></i>Demo Segera
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="260">
+          <div class="position-relative portfolio-item glass animate__animated animate__zoomIn">
+            <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?q=80&w=800&auto=format&fit=crop"
+              alt="Servis HP"
+              class="img-fluid"
+              loading="lazy"
+            />
+            <div class="overlay p-4 animate__animated animate__fadeInUp">
+              <div>
+                <h6 class="mb-2 fw-bold">Servis HP & Teknologi</h6>
+                <small class="d-block mb-3">
+                  Pengalaman servis HP, flashing, unlock, dan troubleshooting hardware/software.
+                </small>
+                <div class="d-flex gap-2 mb-3">
+                  <span class="badge bg-danger">Teknisi</span>
+                  <span class="badge bg-info">Android</span>
+                </div>
+                <a class="btn btn-sm btn-brand rounded-3" href="#" tabindex="-1" aria-disabled="true">
+                  <i class="fa-solid fa-eye me-1"></i>Demo Segera
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="330">
+          <div class="position-relative portfolio-item glass animate__animated animate__zoomIn">
+            <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?q=80&w=800&auto=format&fit=crop"
+              alt="Cloud & VPS"
+              class="img-fluid"
+              loading="lazy"
+            />
+            <div class="overlay p-4 animate__animated animate__fadeInUp">
+              <div>
+                <h6 class="mb-2 fw-bold">Cloud & VPS Playground</h6>
+                <small class="d-block mb-3">
+                  Eksperimen server, Cloudflare tunnel, RDP, dan web server sendiri.
+                </small>
+                <div class="d-flex gap-2 mb-3">
+                  <span class="badge bg-primary">Cloud</span>
+                  <span class="badge bg-dark">VPS</span>
+                </div>
+                <a class="btn btn-sm btn-brand rounded-3" href="#" tabindex="-1" aria-disabled="true">
+                  <i class="fa-solid fa-eye me-1"></i>Demo Segera
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="position-relative portfolio-item glass animate__animated animate__zoomIn">
+            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"
+              alt="Buku & Astronomi"
+              class="img-fluid"
+              loading="lazy"
+            />
+            <div class="overlay p-4 animate__animated animate__fadeInUp">
+              <div>
+                <h6 class="mb-2 fw-bold">Buku, Astronomi & Action</h6>
+                <small class="d-block mb-3">
+                  Suka membaca buku seru, astronomi, dan cerita action inspiratif.
+                </small>
+                <div class="d-flex gap-2 mb-3">
+                  <span class="badge bg-info">Astronomi</span>
+                  <span class="badge bg-success">Buku</span>
+                </div>
+                <a class="btn btn-sm btn-brand rounded-3" href="#" tabindex="-1" aria-disabled="true">
+                  <i class="fa-solid fa-eye me-1"></i>Demo Segera
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2 class="fw-bold animate__animated animate__fadeInDown">Kontak <span class="text-gradient">Melfiano</span></h2>
+        <p style="color:var(--muted)" class="animate__animated animate__fadeInUp">Yuk, diskusi atau kolaborasi! Bisa tanya-tanya, sharing, atau kerjasama proyek.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-5" data-aos="fade-right">
+          <div class="cardx p-4 h-100 glass animate__animated animate__fadeInLeft">
+            <h5 class="mb-4">
+              <i class="fa-solid fa-address-card me-2 text-gradient"></i>Info Kontak
+            </h5>
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="icon-badge">
+                <i class="fa-solid fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <strong>Lokasi</strong>
+                <div class="small" style="color:var(--muted)">Krian, Sidoarjo (WIB UTC+7)</div>
+                <div class="small" style="color:var(--muted)">Remote & On-site</div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="icon-badge">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <div class="small" style="color:var(--muted)">
+                  <a href="mailto:support@melfiano.my.id" class="text-decoration-none">support@melfiano.my.id</a>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-3 mb-4">
+              <div class="icon-badge">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div>
+                <strong>WhatsApp</strong>
+                <div class="small" style="color:var(--muted)">
+                  <a href="https://wa.me/6281234567890" class="text-decoration-none" target="_blank">+62 812-3456-7890</a>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <a href="#contact-form" class="btn btn-brand rounded-4">
+                <i class="fa-solid fa-paper-plane me-2"></i>Kirim Pesan
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="cardx p-4 h-100 glass animate__animated animate__fadeInRight">
+            <h5 class="mb-4">
+              <i class="fa-solid fa-paper-plane me-2 text-gradient"></i>Kirim Pesan
+            </h5>
+            <form id="contact-form" action="sendmail.php" method="POST">
+              <div class="mb-3">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Pesan</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-brand rounded-4">
+                  <i class="fa-solid fa-paper-plane me-2"></i>Kirim Pesan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 mt-5 glass animate__animated animate__fadeInUp">
+  <div class="container text-center">
+    <p class="mb-2" style="color:var(--muted)">
+      &copy; 2025 Fajar Melfiano Obese Afoan Toan. All Rights Reserved.
+    </p>
+    <div class="row g-2 justify-content-center">
+      <div class="col-auto">
+        <a href="#hero" class="text-decoration-none" style="color:var(--fg)">
+          <i class="fa-solid fa-arrow-up"></i> <span class="d-none d-sm-inline">Back to top</span>
+        </a>
+      </div>
+      <div class="col-auto">
+        <a href="https://github.com/melfiano" target="_blank" rel="noopener" class="text-decoration-none" style="color:var(--fg)">
+          <i class="fa-brands fa-github"></i> <span class="d-none d-sm-inline">GitHub</span>
+        </a>
+      </div>
+      <div class="col-auto">
+        <a href="https://www.instagram.com/melfiano/" target="_blank" rel="noopener" class="text-decoration-none" style="color:var(--fg)">
+          <i class="fa-brands fa-instagram"></i> <span class="d-none d-sm-inline">Instagram</span>
+        </a>
+      </div>
+      <div class="col-auto">
+        <a href="mailto:support@melfiano.my.id" class="text-decoration-none" style="color:var(--fg)">
+          <i class="fa-solid fa-envelope"></i> <span class="d-none d-sm-inline">Email</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+    GLightbox({ selector: '.glightbox' });
+  </script>
+  <script>
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = 'block';
+      } else {
+        backToTopBtn.style.display = 'none';
+      }
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          e.preventDefault();
+          window.scrollTo({
+            top: targetSection.offsetTop - 100,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          alert('Pesan Anda telah dikirim! Terima kasih.');
+          this.reset();
+        } else {
+          alert('Terjadi kesalahan. Silakan coba lagi nanti.');
+        }
+      }).catch(error => {
+        alert('Terjadi kesalahan. Silakan coba lagi nanti.');
+      });
+    });
+
+    document.getElementById('contact-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+
+      const suspiciousPatterns = [
+        /<script[\s>]/i, /onerror\s*=/i, /onload\s*=/i, /<img/i, /<iframe/i, /<svg/i, /select\s+\*/i,
+        /union\s+select/i, /insert\s+into/i, /drop\s+table/i, /update\s+\w+/i, /delete\s+from/i,
+        /http[s]?:\/\//i, /bcc:/i, /cc:/i, /content-type:/i
+      ];
+      let isAttack = false;
+      for (let [key, value] of formData.entries()) {
+        if (typeof value === 'string' && suspiciousPatterns.some(rx => rx.test(value))) {
+          isAttack = true;
+          break;
+        }
+      }
+
+      if (isAttack) {
+        showToast('Akses Anda diblokir karena terdeteksi aktivitas mencurigakan.', 'danger');
+
+      }
+
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          showToast('Pesan Anda telah dikirim! Terima kasih.', 'success');
+          this.reset();
+        } else {
+          showToast('Terjadi kesalahan. Silakan coba lagi nanti.', 'danger');
+        }
+      }).catch(error => {
+        showToast('Terjadi kesalahan. Silakan coba lagi nanti.', 'danger');
+      });
+    });
+
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('topNav');
+      if (window.scrollY > 30) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    });
+
+    function animateCounters() {
+      document.querySelectorAll('[data-counter]').forEach(counter => {
+        if (counter.dataset.animated) return;
+        const rect = counter.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          counter.dataset.animated = "true";
+          let start = 0, end = +counter.dataset.counter, duration = 1200, step = Math.ceil(end / (duration / 16));
+          function update() {
+            start += step;
+            if (start > end) start = end;
+            counter.textContent = start;
+            if (start < end) requestAnimationFrame(update);
+          }
+          update();
+        }
+      });
+    }
+    window.addEventListener('scroll', animateCounters);
+    window.addEventListener('DOMContentLoaded', animateCounters);
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const roles = [
+        'Cyber Security Specialist',
+        'Incident Responder',
+        'Penetration Tester',
+        'Security Engineer',
+        'Threat Hunter'
+      ];
+      let i = 0, j = 0, isDeleting = false, current = '', speed = 80;
+      const el = document.getElementById('typed');
+      function type() {
+        if (!el) return;
+        if (!isDeleting && j <= roles[i].length) {
+          current = roles[i].substring(0, j++);
+          el.textContent = current;
+          setTimeout(type, speed);
+        } else if (isDeleting && j >= 0) {
+          current = roles[i].substring(0, j--);
+          el.textContent = current;
+          setTimeout(type, speed / 2);
+        } else {
+          isDeleting = !isDeleting;
+          if (!isDeleting) i = (i + 1) % roles.length;
+          setTimeout(type, 900);
+        }
+      }
+      type();
+       });
+
+    function animateSkills() {
+      document.querySelectorAll('.skill-fill').forEach(bar => {
+        const rect = bar.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) {
+          bar.style.width = bar.dataset.width + '%';
+        }
+      });
+    }
+    window.addEventListener('scroll', animateSkills);
+    window.addEventListener('DOMContentLoaded', animateSkills);
+
+    const themeToggle = document.getElementById('themeToggle');
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (themeToggle) {
+        themeToggle.innerHTML = theme === 'light'
+          ? '<i class="fa-solid fa-sun"></i>'
+          : '<i class="fa-solid fa-moon"></i>';
+      }
+    }
+    themeToggle?.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      setTheme(current === 'dark' ? 'light' : 'dark');
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('theme');
+      setTheme(saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+    });
+
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const sections = Array.from(navLinks).map(link => document.querySelector(link.getAttribute('href')));
+    function updateActiveNav() {
+      let index = sections.findIndex((section, i) => {
+        if (!section) return false;
+        const rect = section.getBoundingClientRect();
+        return rect.top <= 120 && rect.bottom > 120;
+      });
+      if (index === -1) index = 0;
+      navLinks.forEach((link, i) => {
+        if (i === index) link.classList.add('active');
+        else link.classList.remove('active');
+      });
+    }
+    window.addEventListener('scroll', updateActiveNav);
+    window.addEventListener('DOMContentLoaded', updateActiveNav);
+
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse.classList.contains('show')) {
+          new bootstrap.Collapse(navbarCollapse).hide();
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      animateSkills();
+      animateCounters();
+      updateActiveNav();
+    });
+
+    const scrollProgressBar = document.getElementById('scrollProgressBar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgressBar.style.width = progress + '%';
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('theme');
+      if (!saved) {
+        const hour = new Date().getHours();
+        if (hour >= 19 || hour < 6) setTheme('dark');
+        else setTheme('light');
+      }
+    });
+
+    document.querySelectorAll('[data-aos][data-aos-delay=""]').forEach((el, idx) => {
+      el.setAttribute('data-aos-delay', idx * 70 + 50);
+    });
+
+    const emailInput = document.getElementById('email');
+    emailInput.addEventListener('input', function() {
+      if (!this.value.match(/^[^@\s]+@[^@\s]+\.[^@\s]+$/)) {
+        this.classList.add('is-invalid');
+      } else {
+        this.classList.remove('is-invalid');
+      }
+    });
+
+    document.addEventListener('mousemove', function(e) {
+      const hero = document.querySelector('.hero');
+      if (!hero) return;
+      const x = (e.clientX / window.innerWidth - 0.5) * 10;
+      const y = (e.clientY / window.innerHeight - 0.5) * 10;
+      hero.style.backgroundPosition = `${50 + x}% ${50 + y}%`;
+    });
+
+    document.body.addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') document.body.classList.add('user-is-tabbing');
+    });
+    document.body.addEventListener('mousedown', function() {
+      document.body.classList.remove('user-is-tabbing');
+    });
+
+    const testimonialCarousel = document.getElementById('testimonialCarousel');
+    if (testimonialCarousel) {
+      const carousel = new bootstrap.Carousel(testimonialCarousel, { interval: 6000, ride: 'carousel' });
+    }
+
+    function showToast(msg, type = 'success') {
+      let toast = document.createElement('div');
+      toast.className = `toast align-items-center text-bg-${type === 'success' ? 'success' : 'danger'} border-0 position-fixed bottom-0 end-0 m-4`;
+      toast.style.zIndex = 20000;
+      toast.innerHTML = `<div class="d-flex"><div class="toast-body">${msg}</div><button type="button" class="btn-close btn-close-white ms-2 m-auto" data-bs-dismiss="toast"></button></div>`;
+      document.body.appendChild(toast);
+      let bsToast = new bootstrap.Toast(toast, { delay: 3500 });
+      bsToast.show();
+      toast.addEventListener('hidden.bs.toast', () => toast.remove());
+    }
+
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      fetch(this.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          showToast('Pesan Anda telah dikirim! Terima kasih.', 'success');
+          this.reset();
+        } else {
+          showToast('Terjadi kesalahan. Silakan coba lagi nanti.', 'danger');
+        }
+      }).catch(error => {
+        showToast('Terjadi kesalahan. Silakan coba lagi nanti.', 'danger');
+      });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const cvBtn = document.getElementById('downloadCV');
+      if (cvBtn) {
+        cvBtn.addEventListener('click', function() {
+          let count = localStorage.getItem('cv_downloads') || 0;
+          localStorage.setItem('cv_downloads', ++count);
+          showToast('Terima kasih sudah mengunduh CV saya!', 'success');
+        });
+      }
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === '/') {
+        const search = document.getElementById('searchInput');
+        if (search) { e.preventDefault(); search.focus(); }
+      }
+      if (e.key === '?') {
+        const helpModal = document.getElementById('helpModal');
+        if (helpModal) new bootstrap.Modal(helpModal).show();
+      }
+    });
+
+    document.body.style.cursor = 'url("https://cdn.jsdelivr.net/gh/saadeghi/daisyui@latest/src/cursor/cursor-pointer.svg"), auto';
+
+    window.addEventListener('load', function() {
+      const preloader = document.getElementById('preloader');
+      if (preloader) preloader.style.display = 'none';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const hero = document.querySelector('.hero-card');
+      if (hero) {
+        let lottie = document.createElement('lottie-player');
+        lottie.setAttribute('src', 'https://assets10.lottiefiles.com/packages/lf20_5ngs2ksb.json');
+        lottie.setAttribute('background', 'transparent');
+        lottie.setAttribute('speed', '1');
+        lottie.setAttribute('style', 'width: 60px; height: 60px; position: absolute; top: -30px; right: -30px; z-index: 10;');
+        lottie.setAttribute('loop', '');
+        lottie.setAttribute('autoplay', '');
+        hero.appendChild(lottie);
+      }
+    });
+  </script>
+</body>
+</html>
